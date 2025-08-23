@@ -1,0 +1,54 @@
+data:
+  ab_internal:
+    ql: 400
+    sl: 200
+  allowedHosts:
+    hosts:
+      - "graph.microsoft.com"
+      - "login.microsoftonline.com"
+      - "*.sharepoint.com"
+      - "*.sharepoint-df.com"
+  connectorBuildOptions:
+    baseImage: docker.io/airbyte/source-declarative-manifest:6.60.12@sha256:b236b4ff8351a7d7f0ff7f938bbf0ab7b455c4c9e6e7cc93933f4aa9201d66cb
+  connectorSubtype: file
+  connectorType: source
+  definitionId: 5e6175e5-68e1-4c17-bff9-56103bbb8e5a
+  dockerImageTag: 0.1.0
+  dockerRepository: airbyte/source-excel-sheets
+  documentationUrl: https://docs.airbyte.com/integrations/sources/excel-sheets
+  githubIssueLabel: source-excel-sheets
+  icon: icon.svg
+  license: Elv2
+  maxSecondsBetweenMessages: 60
+  name: Excel Sheets
+  remoteRegistries:
+    pypi:
+      enabled: false
+      packageName: airbyte-source-excel-sheets
+  registryOverrides:
+    cloud:
+      enabled: true
+    oss:
+      enabled: true
+  releaseStage: alpha
+  releases:
+    rolloutConfiguration:
+      enableProgressiveRollout: false
+  supportLevel: community
+  tags:
+    - language:manifest-only
+    - cdk:low-code
+  connectorTestSuitesOptions:
+    - suite: liveTests
+      testConnections:
+        - name: excel-sheets_oauth_config_dev_null
+          id: 8f7c5c3e-4b2a-4d8f-9e1a-3c5b7a9d2e6f
+    - suite: unitTests
+    - suite: acceptanceTests
+      testSecrets:
+        - name: SECRET_SOURCE-EXCEL-SHEETS__CREDS
+          fileName: config.json
+          secretStore:
+            type: GSM
+            alias: airbyte-connector-testing-secret-store
+metadataSpecVersion: "1.0"

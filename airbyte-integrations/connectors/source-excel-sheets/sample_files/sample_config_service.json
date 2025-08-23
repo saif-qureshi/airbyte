@@ -1,0 +1,22 @@
+{
+  "workbook_id": "https://contoso.sharepoint.com/sites/TeamSite/Shared%20Documents/SampleWorkbook.xlsx",
+  "credentials": {
+    "auth_type": "Service",
+    "tenant_id": "12345678-1234-1234-1234-123456789012",
+    "client_id": "your-client-id",
+    "client_secret": "your-client-secret"
+  },
+  "batch_size": 1000000,
+  "names_conversion": true,
+  "remove_special_characters": true,
+  "stream_name_overrides": [
+    {
+      "source_stream_name": "Sheet1",
+      "custom_stream_name": "sales_data"
+    },
+    {
+      "source_stream_name": "2024 Q1",
+      "custom_stream_name": "q1_2024"
+    }
+  ]
+}

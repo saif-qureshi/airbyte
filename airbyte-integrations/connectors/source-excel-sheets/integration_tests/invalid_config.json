@@ -1,0 +1,10 @@
+{
+  "workbook_id": "invalid-workbook-id",
+  "credentials": {
+    "auth_type": "OAuth",
+    "tenant_id": "invalid-tenant",
+    "client_id": "invalid-client",
+    "client_secret": "invalid-secret",
+    "refresh_token": "invalid-token"
+  }
+}
